@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">Marquee Text</string>
+    <string name="descr_overflow_button">descr_overflow_button</string>
+</resources>
