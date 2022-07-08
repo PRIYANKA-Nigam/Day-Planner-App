@@ -8,5 +8,6 @@
         android:title="On-Going" />
     <item android:id="@+id/d"
         android:title="Unable To do" />
-
+    <item android:id="@+id/e"
+        android:title="Logout From the App" />
 </menu>

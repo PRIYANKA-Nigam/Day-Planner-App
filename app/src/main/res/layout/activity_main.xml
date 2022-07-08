@@ -16,7 +16,7 @@
         android:ellipsize="marquee"
         android:marqueeRepeatLimit="marquee_forever"
         android:singleLine="true"
-        android:text="Hello Programmers ... Learn how to show marquee text"
+        android:text="Create your WorkList for the day and give a right path to your carrier &amp; Time !!!!!!!!!!"
         android:textColor="@color/colorPrimary"
         android:textSize="25sp" />
 
@@ -80,15 +80,100 @@
         android:tint="@color/white"
         app:fabCustomSize="45dp" />
 
-    <ImageButton
-        android:layout_width="156dp"
-        android:layout_height="104dp"
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/fab3"
+        android:layout_width="94dp"
+        android:layout_height="76dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentBottom="true"
+        android:layout_gravity="end"
+        android:layout_marginStart="10dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginEnd="307dp"
+        android:layout_marginRight="307dp"
+        android:layout_marginBottom="614dp"
+        android:background="@drawable/circle"
+        android:src="@drawable/send"
+        android:tint="@color/white"
+        app:fabCustomSize="45dp" />
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/fab4"
+        android:layout_width="94dp"
+        android:layout_height="76dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentBottom="true"
+        android:layout_gravity="end"
+        android:layout_marginStart="10dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginEnd="307dp"
+        android:layout_marginRight="307dp"
+        android:layout_marginBottom="384dp"
+        android:background="@drawable/circle"
+        android:src="@drawable/send"
+        android:tint="@color/white"
+        app:fabCustomSize="45dp" />
+
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="295dp"
+        android:layout_height="98dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="46dp"
+        android:layout_marginLeft="46dp"
+        android:layout_marginTop="144dp"
+        android:gravity="center"
+        android:text="DAY PLANNER APP"
+        android:textSize="35dp"
+        android:textStyle="bold" />
+
+    <Button
+        android:id="@+id/button2"
+        android:layout_width="204dp"
+        android:layout_height="71dp"
         android:layout_alignParentStart="true"
         android:layout_alignParentLeft="true"
         android:layout_alignParentBottom="true"
-        android:layout_marginStart="251dp"
-        android:layout_marginLeft="251dp"
-        android:layout_marginBottom="22dp"
-        android:id="@+id/img"
-        android:src="@drawable/abc_vector_test" />
+        android:layout_centerHorizontal="true"
+        android:layout_marginStart="110dp"
+        android:layout_marginLeft="110dp"
+        android:layout_marginBottom="348dp"
+        android:text="Select Fixed set of Activities To Do" />
+
+    <Button
+        android:id="@+id/button3"
+        android:layout_width="204dp"
+        android:layout_height="71dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginStart="108dp"
+        android:layout_marginLeft="108dp"
+        android:layout_marginBottom="271dp"
+        android:onClick="ShowPicker"
+        android:text="Select Date for planned Activities" />
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="391dp"
+        android:layout_height="77dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="12dp"
+        android:layout_marginLeft="12dp"
+        android:textSize="25dp"
+        android:textStyle="bold"
+        android:layout_marginBottom="131dp"
+        android:text="TextView" />
 </RelativeLayout>

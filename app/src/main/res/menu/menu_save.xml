@@ -5,4 +5,23 @@
     android:title="Save Your Data"
     android:icon="@drawable/save"
     app:showAsAction="always"/>
+    <item android:id="@+id/pick"
+        android:title="Pick Your Data"
+        android:icon="@drawable/pick"
+        app:showAsAction="always"/>
+    <item android:id="@+id/filter"
+        android:title="filter"
+        app:showAsAction="always">
+        <menu>
+            <item android:id="@+id/sort1"
+                android:title="Sort A to Z"
+                android:icon="@drawable/a_to_z"
+                android:orderInCategory="100"/>
+            <item android:id="@+id/sort2"
+                android:title="Sort Z to A"
+                android:icon="@drawable/z_to_a"
+                android:orderInCategory="100"/>
+        </menu>
+    </item>
+
 </menu>

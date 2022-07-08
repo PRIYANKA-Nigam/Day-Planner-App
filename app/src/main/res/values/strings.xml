@@ -1,4 +1,18 @@
 <resources>
     <string name="app_name">Marquee Text</string>
     <string name="descr_overflow_button">descr_overflow_button</string>
+    <string-array name="Shopping_Item">
+        <item>Getting Early</item>
+        <item>Walking</item>
+        <item>Breakfasting</item>
+        <item>Reading News</item>
+        <item>Office Work</item>
+        <item>App Development</item>
+        <item>Listening Podcast</item>
+        <item>Web Surfing</item>
+        <item>Evening Walk</item>
+        <item>Social Networking</item>
+        <item>Dinner</item>
+        <item>Going to Bed at 12am</item>
+    </string-array>
 </resources>
