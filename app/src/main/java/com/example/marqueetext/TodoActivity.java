@@ -102,17 +102,18 @@ public class TodoActivity extends AppCompatActivity {
             notes.remove(notes.get(0)); arrayAdapter  =new ArrayAdapter(getApplicationContext(), android.R.layout.simple_list_item_1,notes);
         }
         listView.setAdapter(arrayAdapter);
+        try {
+            Bundle bundle = getIntent().getExtras();
+            String s = bundle.getString("list");
+            set.add(s); notes=new ArrayList<>(set);
+            arrayAdapter.notifyDataSetChanged();
+            arrayAdapter = new ArrayAdapter(this, android.R.layout.simple_list_item_1, notes);
+            listView.setAdapter(arrayAdapter);
+        }catch(NullPointerException e){
+            e.printStackTrace();
+        }
         loadData();
-//        try {
-//            Bundle bundle = getIntent().getExtras();
-//            String s = bundle.getString("list");
-//            set.add(s); notes=new ArrayList<>(set);
-//            arrayAdapter.notifyDataSetChanged();
-////            arrayAdapter = new ArrayAdapter(this, android.R.layout.simple_list_item_1, notes);
-////            listView.setAdapter(arrayAdapter);
-//        }catch(NullPointerException e){
-//            e.printStackTrace();
-//        }
+
     }
     private  void shareItem(String s){
         Intent intent=new Intent(Intent.ACTION_SEND);

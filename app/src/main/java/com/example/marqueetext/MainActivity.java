@@ -70,7 +70,7 @@ button.setOnClickListener(new View.OnClickListener() {
     @Override
     public void onClick(View v) {
         AlertDialog.Builder builder=new AlertDialog.Builder(MainActivity.this);
-        builder.setTitle("Items Available");
+        builder.setTitle("Daily Activities ...");
         builder.setMultiChoiceItems(items, checkedItems, new DialogInterface.OnMultiChoiceClickListener() {
             @Override
             public void onClick(DialogInterface dialog, int position, boolean isChecked) {
@@ -85,8 +85,8 @@ button.setOnClickListener(new View.OnClickListener() {
         });
 
         builder.setCancelable(true);
-      //  final String finalS = s;
-        builder.setPositiveButton("OK", new DialogInterface.OnClickListener() {
+        final String[] finalS = {""};
+        builder.setPositiveButton("Todo", new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialog, int position) {
                 String s="";
@@ -96,24 +96,19 @@ button.setOnClickListener(new View.OnClickListener() {
                         s+=" ,";
                     }
                 }
-//                final Bundle bundle = new Bundle();
-//                bundle.putString("list", finalS);
-//                Intent intent=new Intent(MainActivity.this,TodoActivity.class);
-//                intent.putExtras(bundle);
-//                startActivity(intent);
-//                Toast.makeText(getApplicationContext(), "Moving item to Todo Activity", Toast.LENGTH_LONG).show();
+                finalS[0] =s;
+                final Bundle bundle = new Bundle();
+                bundle.putString("list", finalS[0]);
+                Intent intent=new Intent(MainActivity.this,TodoActivity.class);
+                intent.putExtras(bundle);
+                startActivity(intent);
+                Toast.makeText(getApplicationContext(), "Moving item to Todo Activity", Toast.LENGTH_LONG).show();
                 textView2.setText(s);
             }
         });
-        builder.setNeutralButton("Cancel", new DialogInterface.OnClickListener() {
+        builder.setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialog, int which) {
-//                final Bundle bundle = new Bundle();
-//                bundle.putString("list", finalS);
-//                Intent intent=new Intent(MainActivity.this,OnGoingActivity.class);
-//                intent.putExtras(bundle);
-//                startActivity(intent);
-//                Toast.makeText(getApplicationContext(), "Moving item to In Progress Activity", Toast.LENGTH_LONG).show();
                 dialog.dismiss();
             }
         });
@@ -125,12 +120,6 @@ button.setOnClickListener(new View.OnClickListener() {
                     arrayList.clear();
                     textView2.setText("");
                 }
-//                final Bundle bundle = new Bundle();
-//                bundle.putString("list", finalS);
-//                Intent intent=new Intent(MainActivity.this,DoneActivity.class);
-//                intent.putExtras(bundle);
-//                startActivity(intent);
-//                Toast.makeText(getApplicationContext(), "Moving item to Done Activity", Toast.LENGTH_LONG).show();
             }
         });
         AlertDialog dialog=builder.create();
@@ -150,7 +139,13 @@ button.setOnClickListener(new View.OnClickListener() {
         startActivity(intent);
     }
     public void ShowPicker(View view){
-        DatePickerDialog datePickerDialog=new DatePickerDialog(this,MainActivity.this,2016,12,01);
+        final DatePickerDialog datePickerDialog=new DatePickerDialog(this,MainActivity.this,2016,12,01);
+        datePickerDialog.setButton(DialogInterface.BUTTON_NEUTRAL, "See Existing Dates", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+              onDateSet(null,0,-1,0);
+            }
+        });
         datePickerDialog.show();
     }
 }

@@ -11,15 +11,19 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.ImageButton;
 import android.widget.PopupMenu;
+import android.widget.TextView;
 
 public class PlannedActivity extends AppCompatActivity {
     ImageButton imageButton;
+    TextView textView;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_planned);
+        textView=(TextView)findViewById(R.id.textView5);
         Bundle bundle = getIntent().getExtras();
         String s = bundle.getString("item");
+        textView.setText("Planner for Day :"+s);
         imageButton=(ImageButton)findViewById(R.id.img);
         imageButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -48,7 +52,7 @@ public class PlannedActivity extends AppCompatActivity {
                         }
                         else if (item.getItemId()==R.id.e) {
                             AlertDialog.Builder a=new AlertDialog.Builder(PlannedActivity.this);
-                            a.setMessage("do you want ot close this app!!!").setCancelable(false).setPositiveButton("yes", new DialogInterface.OnClickListener() {
+                            a.setMessage("Want to exit from current screen !!!").setCancelable(false).setPositiveButton("yes", new DialogInterface.OnClickListener() {
                                 @Override public void onClick(DialogInterface dialogInterface, int i) { finish(); }
                             })
                                     .setNegativeButton("no", new DialogInterface.OnClickListener() {

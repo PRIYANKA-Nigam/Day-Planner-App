@@ -21,7 +21,7 @@
         android:layout_above="@id/ll"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Enter item name to earch"
+        android:hint="Enter item name to search...."
         android:id="@+id/ed"/>
 
     <ListView

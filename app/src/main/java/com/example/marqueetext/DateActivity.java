@@ -46,11 +46,15 @@ public class DateActivity extends AppCompatActivity {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 String s = arrayList.get(position);
-                final Bundle bundle = new Bundle();
-                bundle.putString("item", s);
-                Intent intent=new Intent(DateActivity.this,PlannedActivity.class);
-                intent.putExtras(bundle);
-                startActivity(intent);
+                String []c=s.split("/");
+               if (!(c[0].equals("0")))
+                {
+                    final Bundle bundle = new Bundle();
+                    bundle.putString("item", s);
+                    Intent intent = new Intent(DateActivity.this, PlannedActivity.class);
+                    intent.putExtras(bundle);
+                    startActivity(intent);
+                }
 
             }
         });

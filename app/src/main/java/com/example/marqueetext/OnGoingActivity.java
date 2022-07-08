@@ -99,23 +99,15 @@ public class OnGoingActivity extends AppCompatActivity {
        try {
             Bundle bundle = getIntent().getExtras();
             String s = bundle.getString("item");
-              set.add(s); notes=new ArrayList<>(set);
+              set.add(s);
+             notes=new ArrayList<>(set);
            arrayAdapter.notifyDataSetChanged();
 //            arrayAdapter = new ArrayAdapter(this, android.R.layout.simple_list_item_1, notes);
 //            listView.setAdapter(arrayAdapter);
         }catch(NullPointerException e){
            e.printStackTrace();
        }
-//        try {
-//            Bundle bundle = getIntent().getExtras();
-//            String s = bundle.getString("list");
-//            set.add(s); notes=new ArrayList<>(set);
-//            arrayAdapter.notifyDataSetChanged();
-////            arrayAdapter = new ArrayAdapter(this, android.R.layout.simple_list_item_1, notes);
-////            listView.setAdapter(arrayAdapter);
-//        }catch(NullPointerException e){
-//            e.printStackTrace();
-//        }
+//
 //        while(notes.size()>0){
 //            notes.remove(notes.get(0)); arrayAdapter  =new ArrayAdapter(getApplicationContext(), android.R.layout.simple_list_item_1,notes);
 //        }
