@@ -16,7 +16,7 @@
         android:ellipsize="marquee"
         android:marqueeRepeatLimit="marquee_forever"
         android:singleLine="true"
-        android:text="Create your WorkList for the day and give a right path to your carrier &amp; Time !!!!!!!!!!"
+        android:text="Plan Your Day by creating WorkList for the day and give a right path to your career &amp; Time !!!!!!!!!!"
         android:textColor="@color/colorPrimary"
         android:textSize="25sp" />
 

@@ -148,4 +148,19 @@ button.setOnClickListener(new View.OnClickListener() {
         });
         datePickerDialog.show();
     }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        MenuInflater menuInflater=getMenuInflater();
+        menuInflater.inflate(R.menu.set_alarm,menu);
+        return super.onCreateOptionsMenu(menu);
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
+        if (item.getItemId()==R.id.alarm){
+            startActivity(new Intent(getApplicationContext(),AlarmActivity.class));
+        }
+        return super.onOptionsItemSelected(item);
+    }
 }

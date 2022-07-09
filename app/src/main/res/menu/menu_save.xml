@@ -7,7 +7,7 @@
     app:showAsAction="always"/>
     <item android:id="@+id/pick"
         android:title="Pick Your Data"
-        android:icon="@drawable/pick"
+        android:icon="@drawable/move"
         app:showAsAction="always"/>
     <item android:id="@+id/filter"
         android:title="filter"
