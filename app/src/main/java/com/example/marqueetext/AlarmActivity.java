@@ -36,7 +36,7 @@ public class AlarmActivity extends AppCompatActivity {
             public void onTimeChanged(TimePicker view, int hourOfDay, int minute) {
                 hrs=hourOfDay;
                 min=minute;
-                textView.setText(" "+hrs +":"+min);
+                textView.setText("Alarm Set for - "+hrs +":"+min);
             }
         });
     }
@@ -58,4 +58,13 @@ public class AlarmActivity extends AppCompatActivity {
         PendingIntent pendingIntent=PendingIntent.getBroadcast(AlarmActivity.this,1,intent,PendingIntent.FLAG_UPDATE_CURRENT);
         alarmManager.set(AlarmManager.RTC_WAKEUP,calendar.getTimeInMillis(),pendingIntent);
     }
+
+    public void CancelTime(View view) {
+        Intent intent=new Intent(AlarmActivity.this,MyBroadCastReceiver.class);
+        AlarmManager alarmManager=(AlarmManager)getSystemService(Context.ALARM_SERVICE);
+        PendingIntent pendingIntent=PendingIntent.getActivity(AlarmActivity.this,1,intent,PendingIntent.FLAG_UPDATE_CURRENT);
+        if (pendingIntent!=null)
+       alarmManager.cancel(pendingIntent);pendingIntent.cancel();
+    }
+
 }

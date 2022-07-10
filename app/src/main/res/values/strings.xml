@@ -1,6 +1,7 @@
 <resources>
     <string name="app_name">Day Planner App</string>
     <string name="descr_overflow_button">descr_overflow_button</string>
+    <string name="under"><u>SET IMPORTANT DAY OR EVENT TO CALENDAR TO GET NOTIFICATION ON TIME</u></string>
     <string-array name="Shopping_Item">
         <item>Getting Early</item>
         <item>Walking</item>

@@ -1,11 +1,13 @@
 package com.example.marqueetext;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
@@ -67,5 +69,25 @@ public class PlannedActivity extends AppCompatActivity {
                 popup.show();
         }
     });
+    }
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        MenuInflater menuInflater=getMenuInflater();
+        menuInflater.inflate(R.menu.set_alarm,menu);
+        return super.onCreateOptionsMenu(menu);
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
+        if (item.getItemId()==R.id.alarm){
+            startActivity(new Intent(getApplicationContext(),AlarmActivity.class));
+        }
+        if (item.getItemId()==R.id.home){
+            startActivity(new Intent(getApplicationContext(),MainActivity.class));
+        }
+        if (item.getItemId()==R.id.note){
+            startActivity(new Intent(getApplicationContext(),Note1.class));
+        }
+        return super.onOptionsItemSelected(item);
     }
 }

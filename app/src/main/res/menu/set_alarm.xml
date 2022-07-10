@@ -1,8 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item android:id="@+id/home"
+        android:title="Home Screen"
+        app:showAsAction="always"
+        android:icon="@drawable/home"/>
     <item android:id="@+id/alarm"
-        android:title="filter"
+        android:title="Set Alarm"
         app:showAsAction="always"
         android:icon="@drawable/alarm"/>
+    <item android:id="@+id/note"
+        android:title="Add Note"
+        app:showAsAction="always"
+        android:icon="@drawable/note"/>
 </menu>

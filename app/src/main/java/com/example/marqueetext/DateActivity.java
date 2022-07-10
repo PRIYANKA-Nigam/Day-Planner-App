@@ -19,6 +19,7 @@ import android.widget.ListView;
 import android.widget.Toast;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.HashSet;
 import java.util.Set;
 
@@ -95,6 +96,7 @@ public class DateActivity extends AppCompatActivity {
 
     @Override
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
+        super.onOptionsItemSelected(item);
         if (item.getItemId()==R.id.save){
             SharedPreferences sh=getApplicationContext().getSharedPreferences("com.example.datepickerdialog",MODE_PRIVATE);
             HashSet<String> set=new HashSet<>(arrayList);
@@ -102,6 +104,18 @@ public class DateActivity extends AppCompatActivity {
             Toast.makeText(this,"Data Saved",Toast.LENGTH_LONG).show();
             return true;
         }
-        return super.onOptionsItemSelected(item);
+        if (item.getItemId()==R.id.home){
+            startActivity(new Intent(getApplicationContext(),MainActivity.class));
+        }
+        int id=item.getItemId();
+        if(id==R.id.sort1){
+            Collections.sort(arrayList);
+            adapter.notifyDataSetChanged();
+        }
+        else if(id==R.id.sort2){
+            Collections.sort(arrayList,Collections.<String>reverseOrder());
+            adapter.notifyDataSetChanged();
+        }
+        return false;
     }
 }

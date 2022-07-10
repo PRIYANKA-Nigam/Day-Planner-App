@@ -155,6 +155,9 @@ public class TodoActivity extends AppCompatActivity {
             intent.putStringArrayListExtra("send",notes); startActivity(intent);
             Toast.makeText(getApplicationContext(),"Pick Task which you are unable to do",Toast.LENGTH_LONG).show();
         }
+        if (item.getItemId()==R.id.home){
+            startActivity(new Intent(getApplicationContext(),MainActivity.class));
+        }
         int id=item.getItemId();
         if(id==R.id.sort1){
             Collections.sort(notes);
@@ -164,6 +167,7 @@ public class TodoActivity extends AppCompatActivity {
             Collections.sort(notes,Collections.<String>reverseOrder());
             arrayAdapter.notifyDataSetChanged();
         }
+
         return false;
     }
 

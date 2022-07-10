@@ -11,6 +11,9 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+        <activity android:name=".GoogleCalendar"></activity>
+        <activity android:name=".Note2" />
+        <activity android:name=".Note1" />
         <activity android:name=".SplashActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -26,8 +29,7 @@
         <activity android:name=".OnGoingActivity" />
         <activity android:name=".DoneActivity" />
         <activity android:name=".TodoActivity" />
-        <activity android:name=".MainActivity">
-        </activity>
+        <activity android:name=".MainActivity" />
 
         <receiver android:name=".MyBroadCastReceiver" />
     </application>

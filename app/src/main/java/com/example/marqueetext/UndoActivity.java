@@ -138,6 +138,9 @@ public class UndoActivity extends AppCompatActivity {
                         public void onClick(DialogInterface dialogInterface, int i) { dialogInterface.cancel(); }});
             AlertDialog alert= a.create();alert.setTitle("Alert !!!");alert.show();
         }
+        if (item.getItemId()==R.id.home){
+            startActivity(new Intent(getApplicationContext(),MainActivity.class));
+        }
         int id=item.getItemId();
         if(id==R.id.sort1){
             Collections.sort(arrayList);

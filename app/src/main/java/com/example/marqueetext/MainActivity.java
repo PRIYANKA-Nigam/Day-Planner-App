@@ -24,7 +24,6 @@ import android.widget.ImageView;
 import android.widget.PopupMenu;
 import android.widget.TextView;
 import android.widget.Toast;
-
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 import java.util.ArrayList;
@@ -33,6 +32,7 @@ public class MainActivity extends AppCompatActivity implements DatePickerDialog.
 private TextView textView,textView2;
 FloatingActionButton floatingActionButton,floatingActionButton1,floatingActionButton2,floatingActionButton3,floatingActionButton4;
  Button button,button2;
+ FloatingActionButton f;
 String[] items;boolean[] checkedItems;
 ArrayList<Integer> arrayList=new ArrayList<>();
     @Override
@@ -43,6 +43,13 @@ ArrayList<Integer> arrayList=new ArrayList<>();
         textView.setSelected(true);
         button=(Button)findViewById(R.id.button2);
         button2=(Button)findViewById(R.id.button3);
+        f=findViewById(R.id.f);
+        f.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(getApplicationContext(),GoogleCalendar.class));
+            }
+        });
         floatingActionButton =(FloatingActionButton)findViewById(R.id.fab);
         floatingActionButton1 =(FloatingActionButton)findViewById(R.id.fab1);
         floatingActionButton2 =(FloatingActionButton)findViewById(R.id.fab2);
@@ -160,6 +167,12 @@ button.setOnClickListener(new View.OnClickListener() {
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
         if (item.getItemId()==R.id.alarm){
             startActivity(new Intent(getApplicationContext(),AlarmActivity.class));
+        }
+        if (item.getItemId()==R.id.home){
+            startActivity(new Intent(getApplicationContext(),MainActivity.class));
+        }
+        if (item.getItemId()==R.id.note){
+            startActivity(new Intent(getApplicationContext(),Note1.class));
         }
         return super.onOptionsItemSelected(item);
     }

@@ -146,6 +146,9 @@ public class OnGoingActivity extends AppCompatActivity {
             Toast.makeText(this,"Data Saved",Toast.LENGTH_LONG).show();
             return true;
         }
+        if (item.getItemId()==R.id.home){
+            startActivity(new Intent(getApplicationContext(),MainActivity.class));
+        }
         int id=item.getItemId();
         if(id==R.id.sort1){
             Collections.sort(notes);

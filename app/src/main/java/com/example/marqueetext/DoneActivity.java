@@ -11,6 +11,7 @@ import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
@@ -151,6 +152,9 @@ public class DoneActivity extends AppCompatActivity {
             sh.edit().putStringSet("progress",set).apply();
             Toast.makeText(this,"Data Saved",Toast.LENGTH_LONG).show();
             return true;
+        }
+        if (item.getItemId()==R.id.home){
+            startActivity(new Intent(getApplicationContext(),MainActivity.class));
         }
         int id=item.getItemId();
         if(id==R.id.sort1){
