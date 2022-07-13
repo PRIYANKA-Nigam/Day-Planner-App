@@ -9,6 +9,10 @@
         android:title="Set Alarm"
         app:showAsAction="always"
         android:icon="@drawable/alarm"/>
+    <item android:id="@+id/event"
+        android:title="Add Events"
+        app:showAsAction="always"
+        android:icon="@drawable/event"/>
     <item android:id="@+id/note"
         android:title="Add Note"
         app:showAsAction="always"

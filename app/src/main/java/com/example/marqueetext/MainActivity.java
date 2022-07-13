@@ -174,6 +174,9 @@ button.setOnClickListener(new View.OnClickListener() {
         if (item.getItemId()==R.id.note){
             startActivity(new Intent(getApplicationContext(),Note1.class));
         }
+        if (item.getItemId()==R.id.event){
+            startActivity(new Intent(getApplicationContext(),EventActivity.class));
+        }
         return super.onOptionsItemSelected(item);
     }
 }

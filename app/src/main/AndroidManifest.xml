@@ -11,7 +11,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".GoogleCalendar"></activity>
+        <activity android:name=".EventActivity"></activity>
+        <activity android:name=".GoogleCalendar" />
         <activity android:name=".Note2" />
         <activity android:name=".Note1" />
         <activity android:name=".SplashActivity">
