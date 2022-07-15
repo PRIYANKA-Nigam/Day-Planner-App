@@ -66,6 +66,9 @@ public class Note1 extends AppCompatActivity {
         if (item.getItemId()==R.id.note){
             startActivity(new Intent(getApplicationContext(),Note2.class));
         }
+        if (item.getItemId()==R.id.event){
+            startActivity(new Intent(getApplicationContext(),EventActivity.class));
+        }
         return super.onOptionsItemSelected(item);
     }
 }
