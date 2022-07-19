@@ -1,27 +1,35 @@
 package com.example.marqueetext;
 
 import androidx.annotation.NonNull;
+import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.animation.ObjectAnimator;
 import android.app.DatePickerDialog;
 import android.content.BroadcastReceiver;
+import android.content.ContentResolver;
+import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.IntentFilter;
+import android.media.audiofx.Equalizer;
 import android.net.ConnectivityManager;
+import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
+import android.provider.Settings;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.DatePicker;
+import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.PopupMenu;
+import android.widget.SeekBar;
 import android.widget.TextView;
 import android.widget.Toast;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
@@ -31,18 +39,36 @@ import java.util.ArrayList;
 public class MainActivity extends AppCompatActivity implements DatePickerDialog.OnDateSetListener {
 private TextView textView,textView2;
 FloatingActionButton floatingActionButton,floatingActionButton1,floatingActionButton2,floatingActionButton3,floatingActionButton4;
- Button button,button2;
+ Button button,button2,button3; EditText editText;
  FloatingActionButton f;
 String[] items;boolean[] checkedItems;
 ArrayList<Integer> arrayList=new ArrayList<>();
+    @RequiresApi(api = Build.VERSION_CODES.M)
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+   editText=findViewById(R.id.editTextNumber);
         textView=(TextView)findViewById(R.id.text);  textView2=(TextView)findViewById(R.id.textView3);
         textView.setSelected(true);
         button=(Button)findViewById(R.id.button2);
         button2=(Button)findViewById(R.id.button3);
+        button3=findViewById(R.id.button5);
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
+            if (!Settings.System.canWrite(this)){
+                Intent intent=new Intent(Settings.ACTION_MANAGE_WRITE_SETTINGS);
+                intent.setData(Uri.parse("package:"+this.getPackageName()));
+                startActivity(intent);
+            }
+        }
+        button3.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                ContentResolver contentResolver=getApplicationContext().getContentResolver();
+                Settings.System.putInt(contentResolver,Settings.System.SCREEN_BRIGHTNESS,Integer.parseInt(editText.getText().toString()));
+
+            }
+        });
         f=findViewById(R.id.f);
         f.setOnClickListener(new View.OnClickListener() {
             @Override
