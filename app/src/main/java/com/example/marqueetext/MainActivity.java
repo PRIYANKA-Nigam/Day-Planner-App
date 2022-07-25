@@ -7,6 +7,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.animation.ObjectAnimator;
 import android.app.DatePickerDialog;
+import android.app.PictureInPictureParams;
 import android.content.BroadcastReceiver;
 import android.content.ContentResolver;
 import android.content.Context;
@@ -162,7 +163,12 @@ button.setOnClickListener(new View.OnClickListener() {
 
     }
 
+    @Override
+    public void onUserLeaveHint () {
+        PictureInPictureParams pictureInPictureParams= new PictureInPictureParams.Builder().build();
+        enterPictureInPictureMode(pictureInPictureParams);
 
+    }
     @Override
     public void onDateSet(DatePicker view, int year, int month, int dayOfMonth) {
         Bundle bundle=new Bundle();

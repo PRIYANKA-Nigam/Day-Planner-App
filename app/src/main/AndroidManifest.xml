@@ -18,7 +18,7 @@
         <activity android:name=".GoogleCalendar" />
         <activity android:name=".Note2" />
         <activity android:name=".Note1" />
-        <activity android:name=".SplashActivity">
+        <activity android:name=".SplashActivity" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -33,7 +33,8 @@
         <activity android:name=".OnGoingActivity" />
         <activity android:name=".DoneActivity" />
         <activity android:name=".TodoActivity" />
-        <activity android:name=".MainActivity" />
+        <activity android:name=".MainActivity"  android:supportsPictureInPicture="true"
+            android:configChanges="screenSize|smallestScreenSize|screenLayout|orientation"/>
 
         <receiver android:name=".MyBroadCastReceiver" />
     </application>

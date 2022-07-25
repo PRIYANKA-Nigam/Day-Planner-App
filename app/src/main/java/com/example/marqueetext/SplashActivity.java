@@ -2,6 +2,7 @@ package com.example.marqueetext;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.PictureInPictureParams;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.animation.Animation;
@@ -47,4 +48,5 @@ TextView t; Animation animation;
         };
         timer.start();
     }
+
 }
